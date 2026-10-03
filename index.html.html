@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>A Rosa do Povo — Carlos Drummond de Andrade</title>
+
+  <meta name="description"
+        content="Uma apresentação sobre A Rosa do Povo, de Carlos Drummond de Andrade, seu contexto histórico, temas e importância literária.">
+
+  <style>
+    /* =========================
+       RESET E CONFIGURAÇÕES
+    ========================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Georgia", "Times New Roman", serif;
+      background: #111214;
+      color: #eeeeee;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================
+       BARRA DE NAVEGAÇÃO
+    ========================== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(17, 18, 20, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #d95b70;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      color: #cccccc;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #e8788a;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(circle at 75% 40%,
+        rgba(180, 45, 70, 0.22),
+        transparent 35%),
+        linear-gradient(135deg, #101113, #1b1c20);
+    }
+
+    .hero::before {
+      content: "ROSA";
+      position: absolute;
+      right: -80px;
+      bottom: -80px;
+      font-size: 25vw;
+      font-weight: bold;
+      color: rgba(255,255,255,0.025);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      width: min(1200px, 90%);
+      margin: auto;
+      padding-top: 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: #d95b70;
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(4rem, 9vw, 8.5rem);
+      line-height: 0.9;
+      max-width: 900px;
+      font-weight: normal;
+    }
+
+    .hero h1 span {
+      color: #d95b70;
+      font-style: italic;
+    }
+
+    .author {
+      margin-top: 30px;
+      font-family: Arial, sans-serif;
+      font-size: 1.1rem;
+      color: #bdbdbd;
+      letter-spacing: 1px;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin-top: 35px;
+      font-size: 1.25rem;
+      color: #d7d7d7;
+    }
+
+    .hero-description::before {
+      content: "";
+      display: block;
+      width: 70px;
+      height: 2px;
+      background: #d95b70;
+      margin-bottom: 25px;
+    }
+
+    .scroll {
+      display: inline-block;
+      margin-top: 45px;
+      font-family: Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      color: #aaa;
+    }
+
+    /* =========================
+       SEÇÕES
+    ========================== */
+
+    section {
+      padding: 120px 7%;
+    }
+
+    .section-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-label {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #d95b70;
+      font-size: 0.75rem;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: normal;
+      line-height: 1.1;
+      margin-bottom: 35px;
+    }
+
+    .section-title span {
+      color: #d95b70;
+      font-style: italic;
+    }
+
+    .text {
+      max-width: 800px;
+      color: #c8c8c8;
+      font-size: 1.08rem;
+    }
+
+    /* =========================
+       CONTEXTO HISTÓRICO
+    ========================== */
+
+    #contexto {
+      background: #18191c;
+    }
+
+    .context-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .year {
+      font-size: clamp(6rem, 15vw, 13rem);
+      line-height: 0.8;
+      color: rgba(255,255,255,0.07);
+      font-weight: bold;
+    }
+
+    .historical-box {
+      border-left: 2px solid #d95b70;
+      padding-left: 30px;
+    }
+
+    /* =========================
+       TEMAS
+    ========================== */
+
+    #temas {
+      background: #111214;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .card {
+      padding: 40px;
+      min-height: 250px;
+      background: #1d1e22;
+      border: 1px solid rgba(255,255,255,0.07);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.35s, border-color 0.35s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(217,91,112,0.6);
+    }
+
+    .card-number {
+      font-family: Arial, sans-serif;
+      color: #d95b70;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+    }
+
+    .card h3 {
+      font-size: 1.8rem;
+      margin: 25px 0 15px;
+      font-weight: normal;
+    }
+
+    .card p {
+      color: #aaa;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      border: 1px solid rgba(217,91,112,0.15);
+      border-radius: 50%;
+      right: -50px;
+      bottom: -50px;
+    }
+
+    /* =========================
+       SIGNIFICADO DO TÍTULO
+    ========================== */
+
+    #titulo {
+      background: #e8e5e3;
+      color: #171719;
+    }
+
+    #titulo .section-label {
+      color: #a9364d;
+    }
+
+    .title-explanation {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .rose-symbol {
+      font-size: 12rem;
+      color: #b53f57;
+      text-align: center;
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+
+    .symbol-card {
+      padding: 35px;
+      border-top: 1px solid #aaa;
+    }
+
+    .symbol-card h3 {
+      font-size: 1.7rem;
+      margin-bottom: 15px;
+      font-weight: normal;
+    }
+
+    .symbol-card p {
+      color: #4d4d4d;
+    }
+
+    /* =========================
+       VISÃO CRÍTICA
+    ========================== */
+
+    #critica {
+      background: #151619;
+    }
+
+    .quote {
+      margin: 55px 0;
+      padding: 40px;
+      border-left: 3px solid #d95b70;
+      background: #1c1d21;
+      font-size: 1.7rem;
+      font-style: italic;
+      color: #ddd;
+    }
+
+    .columns {
+      columns: 2;
+      column-gap: 60px;
+      color: #bbb;
+    }
+
+    .columns p {
+      margin-bottom: 20px;
+    }
+
+    /* =========================
+       IMPORTÂNCIA LITERÁRIA
+    ========================== */
+
+    #importancia {
+      background: linear-gradient(135deg, #242529, #17181b);
+    }
+
+    .importance-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .highlight {
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 1.2;
+      font-style: italic;
+    }
+
+    .facts {
+      border-top: 1px solid #555;
+    }
+
+    .fact {
+      padding: 22px 0;
+      border-bottom: 1px solid #444;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .fact span:first-child {
+      color: #999;
+    }
+
+    .fact span:last-child {
+      color: #eee;
+      text-align: right;
+    }
+
+    /* =========================
+       RODAPÉ
+    ========================== */
+
+    footer {
+      padding: 70px 7%;
+      background: #0c0d0f;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    footer .rose {
+      color: #d95b70;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    footer p {
+      color: #888;
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+    }
+
+    footer .final-quote {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #ddd;
+      font-family: Georgia, serif;
+      font-size: 1.25rem;
+      font-style: italic;
+    }
+
+    /* =========================
+       BOTÃO VOLTAR AO TOPO
+    ========================== */
+
+    #topButton {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      width: 45px;
+      height: 45px;
+      border: none;
+      border-radius: 50%;
+      background: #d95b70;
+      color: white;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s;
+      z-index: 999;
+    }
+
+    #topButton.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* =========================
+       ANIMAÇÕES
+    ========================== */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       RESPONSIVIDADE
+    ========================== */
+
+    @media (max-width: 800px) {
+
+      .nav {
+        padding: 15px 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      section {
+        padding: 85px 6%;
+      }
+
+      .hero-content {
+        padding-top: 70px;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+      }
+
+      .hero-description {
+        font-size: 1rem;
+      }
+
+      .context-grid,
+      .title-explanation,
+      .importance-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .year {
+        font-size: 7rem;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .rose-symbol {
+        font-size: 8rem;
+      }
+
+      .columns {
+        columns: 1;
+      }
+
+      .quote {
+        font-size: 1.3rem;
+        padding: 25px;
+      }
+    }
+
+    @media (max-width: 450px) {
+
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+      }
+
+      .card {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVEGAÇÃO
+  ========================== -->
+
+  <header>
+    <nav class="nav">
+      <a href="#inicio" class="logo">
+        A <span>Rosa</span> do Povo
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#contexto">Contexto</a></li>
+        <li><a href="#temas">Temas</a></li>
+        <li><a href="#titulo">O título</a></li>
+        <li><a href="#critica">Visão crítica</a></li>
+        <li><a href="#importancia">Importância</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="inicio">
+
+      <div class="hero-content reveal">
+
+        <div class="eyebrow">
+          Poesia brasileira • 1945
+        </div>
+
+        <h1>
+          A <span>Rosa</span><br>
+          do Povo
+        </h1>
+
+        <p class="author">
+          Carlos Drummond de Andrade
+        </p>
+
+        <p class="hero-description">
+          Uma poesia entre o indivíduo e a sociedade,
+          entre a angústia de seu tempo e a esperança
+          de transformação coletiva.
+        </p>
+
+        <a href="#contexto" class="scroll">
+          ↓ &nbsp; EXPLORAR A OBRA
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTEXTO HISTÓRICO
+    ========================== -->
+
+    <section id="contexto">
+
+      <div class="section-inner reveal">
+
+        <div class="section-label">
+          01 — Contexto histórico
+        </div>
+
+        <div class="context-grid">
+
+          <div>
+            <div class="year">1945</div>
+          </div>
+
+          <div class="historical-box">
+
+            <h2 class="section-title">
+              Uma obra nascida em um
+              <span>tempo de crise.</span>
+            </h2>
+
+            <p class="text">
+              Publicada em 1945, <em>A Rosa do Povo</em> surgiu
+              em um dos períodos mais turbulentos do século XX.
+              O mundo vivia os últimos momentos da Segunda Guerra
+              Mundial, enquanto conflitos políticos, desigualdades
+              sociais e transformações econômicas afetavam
+              profundamente a sociedade.
+            </p>
+
+            <br>
+
+            <p class="text">
+              Nesse cenário, Drummond transforma a poesia em
+              espaço de reflexão sobre o indivíduo, a sociedade
+              e as contradições de seu tempo.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         TEMAS
+    ========================== -->
+
+    <section id="temas">
+
+      <div class="section-inner reveal">
+
+        <div class="section-label">
+          02 — Temas principais
+        </div>
+
+        <h2 class="section-title">
+          Uma poesia que observa
+          <span>o mundo.</span>
+        </h2>
+
+        <p class="text">
+          A obra combina questões coletivas e sentimentos
+          individuais, construindo uma visão complexa da
+          realidade brasileira e mundial.
+        </p>
+
+        <div class="cards">
+
+          <article class="card">
+
+            <div class="card-number">01 / GUERRA</div>
+
+            <h3>Guerra</h3>
+
+            <p>
+              O cenário de conflitos mundiais aparece como
+              símbolo da violência, da destruição e das
+              consequências que atingem a vida das pessoas.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="card-number">02 / SOCIEDADE</div>
+
+            <h3>Desigualdade e Injustiça</h3>
+
+            <p>
+              A poesia volta o olhar para problemas sociais,
+              diferenças econômicas e situações de injustiça
+              presentes na vida coletiva.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="card-number">03 / EXISTÊNCIA</div>
+
+            <h3>Sofrimento e Esperança</h3>
+
+            <p>
+              A angústia e o sofrimento convivem com a
+              possibilidade de esperança e de transformação,
+              sem que a obra apresente respostas simples.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="card-number">04 / CIDADE</div>
+
+            <h3>Vida Moderna</h3>
+
+            <p>
+              A cidade moderna aparece como espaço de encontros,
+              conflitos, solidão, trabalho e experiências
+              compartilhadas.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SIGNIFICADO DO TÍTULO
+    ========================== -->
+
+    <section id="titulo">
+
+      <div class="section-inner reveal">
+
+        <div class="section-label">
+          03 — O significado do título
+        </div>
+
+        <div class="title-explanation">
+
+          <div>
+
+            <h2 class="section-title">
+              A <span>rosa</span><br>
+              e o povo.
+            </h2>
+
+            <p class="text" style="color:#444;">
+              O título reúne duas imagens de forte valor
+              simbólico. A rosa pode representar beleza,
+              delicadeza e esperança, enquanto o povo remete
+              à sociedade e à experiência coletiva.
+            </p>
+
+            <br>
+
+            <p class="text" style="color:#444;">
+              Assim, a expressão sugere a existência de beleza
+              e possibilidade de esperança mesmo em meio às
+              dificuldades vividas pela sociedade.
+            </p>
+
+          </div>
+
+          <div>
+
+            <div class="rose-symbol">✿</div>
+
+            <div class="symbol-card">
+
+              <h3>
+                Beleza em meio à realidade
+              </h3>
+
+              <p>
+                A metáfora aproxima o poético do cotidiano:
+                a poesia nasce da realidade social e procura
+                encontrar significado dentro dela.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         VISÃO CRÍTICA
+    ========================== -->
+
+    <section id="critica">
+
+      <div class="section-inner reveal">
+
+        <div class="section-label">
+          04 — Visão crítica e humana
+        </div>
+
+        <h2 class="section-title">
+          Entre o <span>eu</span> e o mundo.
+        </h2>
+
+        <p class="text">
+          Drummond não abandona a dimensão pessoal para tratar
+          dos problemas coletivos. Pelo contrário, os dois
+          aspectos se encontram constantemente em sua poesia.
+        </p>
+
+        <div class="quote">
+          A experiência individual se transforma em uma maneira
+          de compreender as tensões da vida coletiva.
+        </div>
+
+        <div class="columns">
+
+          <p>
+            A solidão, a angústia e as dúvidas do indivíduo
+            aparecem lado a lado com preocupações relacionadas
+            à sociedade.
+          </p>
+
+          <p>
+            Essa combinação faz com que a obra não seja apenas
+            uma observação política de seu período, mas também
+            uma reflexão sobre a condição humana.
+          </p>
+
+          <p>
+            O poeta apresenta contradições e conflitos sem
+            oferecer soluções fáceis ou respostas definitivas.
+          </p>
+
+          <p>
+            A poesia funciona, portanto, como uma forma de
+            questionar a realidade e perceber aquilo que muitas
+            vezes passa despercebido no cotidiano.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         IMPORTÂNCIA LITERÁRIA
+    ========================== -->
+
+    <section id="importancia">
+
+      <div class="section-inner reveal">
+
+        <div class="section-label">
+          05 — Importância literária
+        </div>
+
+        <div class="importance-content">
+
+          <div>
+
+            <h2 class="highlight">
+              Um dos marcos da poesia
+              brasileira moderna.
+            </h2>
+
+            <br>
+
+            <p class="text">
+              <em>A Rosa do Povo</em> ocupa um lugar de destaque
+              na produção de Carlos Drummond de Andrade e na
+              poesia brasileira moderna. A obra demonstra como
+              a poesia pode dialogar diretamente com questões
+              históricas, políticas, sociais e existenciais.
+            </p>
+
+            <br>
+
+            <p class="text">
+              Ao unir linguagem poética, reflexão social e
+              experiências individuais, Drummond constrói uma
+              obra que permanece relevante para diferentes
+              gerações de leitores.
+            </p>
+
+          </div>
+
+
+          <div class="facts">
+
+            <div class="fact">
+              <span>Autor</span>
+              <span>Carlos Drummond</span>
+            </div>
+
+            <div class="fact">
+              <span>Publicação</span>
+              <span>1945</span>
+            </div>
+
+            <div class="fact">
+              <span>Movimento</span>
+              <span>Modernismo</span>
+            </div>
+
+            <div class="fact">
+              <span>Gênero</span>
+              <span>Poesia</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       RODAPÉ
+  ========================== -->
+
+  <footer>
+
+    <div class="rose">✿</div>
+
+    <p class="final-quote">
+      “No meio do caminho tinha uma pedra.”
+    </p>
+
+    <p>
+      Site educativo sobre <em>A Rosa do Povo</em>,
+      de Carlos Drummond de Andrade.
+    </p>
+
+    <br>
+
+    <p>
+      Desenvolvido para fins educacionais • 2026
+    </p>
+
+  </footer>
+
+
+  <!-- BOTÃO TOPO -->
+
+  <button id="topButton" aria-label="Voltar ao topo">
+    ↑
+  </button>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    // ---------------------------------
+    // ANIMAÇÃO DE APARECIMENTO
+    // ---------------------------------
+
+    const elements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+    elements.forEach(element => {
+      observer.observe(element);
+    });
+
+
+    // ---------------------------------
+    // BOTÃO VOLTAR AO TOPO
+    // ---------------------------------
+
+    const topButton = document.getElementById("topButton");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 500) {
+        topButton.classList.add("show");
+      } else {
+        topButton.classList.remove("show");
+      }
+
+    });
+
+    topButton.addEventListener("click", () => {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+
+
+    // ---------------------------------
+    // DESTAQUE DA NAVEGAÇÃO
+    // ---------------------------------
+
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+
+      let current = "";
+
+      sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
+
+        if (
+          window.scrollY >= sectionTop &&
+          window.scrollY < sectionTop + sectionHeight
+        ) {
+          current = section.getAttribute("id");
+        }
+
+      });
+
+      navLinks.forEach(link => {
+
+        link.style.color = "#cccccc";
+
+        if (link.getAttribute("href") === "#" + current) {
+          link.style.color = "#e8788a";
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
